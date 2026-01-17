@@ -10,29 +10,26 @@
       w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
     var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
     ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-    
-      ttq.load('D5976ERC77U843EECNB0');
-      ttq.page();
+    ttq.load('D5976ERC77U843EECNB0');
+    ttq.page();
     }(window, document, 'ttq');
     </script>
     <style>
-        /* איפוס הגדרות */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        /* הגדרות בסיס */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
 
-        body, html {
-            height: 100%;
+        body {
+            margin: 0;
+            height: 100vh;
             width: 100%;
-            overflow-x: hidden; /* מונע גלילה לצדדים */
-            background-color: #f4f4f4;
+            overflow: hidden; /* מונע גלילה כפולה */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* ממרכז את הקופסה הלבנה באמצע המסך */
         }
 
         /* --- הגדרת הרקע --- */
-        .background-container {
+        .background-image {
             position: fixed;
             top: 0;
             left: 0;
@@ -40,130 +37,105 @@
             height: 100%;
             z-index: -1;
             
-            /* שם התמונה המדויק */
+            /* השם שעבד לך מקודם */
             background-image: url('girls.jpg'); 
             
             background-size: cover;
             background-position: center bottom; /* רואים את המוצרים למטה */
+            background-repeat: no-repeat;
         }
 
-        /* התאמה למחשב */
-        @media (min-width: 768px) {
-            .background-container {
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-color: #e8e8e8;
-            }
-            .content-wrapper {
-                max-width: 500px;
-                margin: 0 auto;
-                background: rgba(255,255,255,0.8); /* קצת רקע לבן במחשב לקריאות */
-                border-radius: 20px;
-                padding: 40px !important;
-                margin-top: 5vh;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            }
-        }
-
-        /* --- המעטפת של הטקסט והכפתור --- */
-        .overlay {
-            width: 100%;
-            min-height: 100%;
-            /* רקע עדין כדי שהטקסט יהיה קריא על הקיר */
-            background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 100%);
-            display: flex;
-            justify-content: center; /* ממקם במרכז לרוחב */
-            align-items: flex-start; /* מתחיל מלמעלה */
-        }
-
-        .content-wrapper {
-            text-align: center; /* הכל ממורכז לאמצע! */
-            padding: 20px;
-            margin-top: 5vh; /* רווח מלמעלה */
-            width: 100%;
+        /* --- הקופסה הלבנה עם הטקסט --- */
+        .card-container {
+            background-color: rgba(255, 255, 255, 0.9); /* לבן כמעט אטום */
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            width: 90%; /* רוחב בנייד */
+            max-width: 450px; /* רוחב מקסימלי במחשב */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            
+            /* מזיז את הקופסה קצת למעלה כדי לא להסתיר את כל המוצרים */
+            margin-bottom: 20vh; 
         }
 
         /* --- עיצוב הטקסט --- */
         h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 15px;
             color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            font-weight: 800;
         }
 
         p {
-            font-size: 1.1rem;
-            line-height: 1.5;
             color: #444;
-            margin-bottom: 12px;
-            font-weight: 500;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-bottom: 8px;
         }
 
-        .bold-line {
+        .bold-text {
             font-weight: 800;
             color: #000;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
-        .highlight-line {
-            color: #E91E63; /* ורוד פוקסיה */
+        .pink-text {
+            color: #E91E63;
             font-weight: 900;
-            font-size: 1.3rem;
-            text-shadow: 1px 1px 0px white;
-            margin: 15px 0;
+            font-size: 1.25rem;
+            margin: 12px 0;
             display: block;
+            text-shadow: 1px 1px 0px white;
         }
 
-        .last-line {
-            font-size: 1rem;
-            margin-bottom: 25px; /* רווח בין הטקסט לכפתור */
-            color: #333;
-        }
-
-        /* --- הכפתור (צמוד לטקסט) --- */
+        /* --- הכפתור --- */
         .whatsapp-btn {
             background-color: #25D366;
             color: white;
             text-decoration: none;
             font-size: 1.3rem;
             font-weight: bold;
-            padding: 15px 35px;
+            padding: 15px 0;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            display: inline-block;
             border: 2px solid white;
-            transition: transform 0.2s;
+            display: block;
+            width: 100%;
+            margin-top: 15px; /* רווח מהטקסט שלפניו */
             animation: pulse 2s infinite;
         }
 
-        .whatsapp-btn:active {
-            transform: scale(0.95);
-        }
+        .whatsapp-btn:active { transform: scale(0.95); }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-
     </style>
 </head>
 <body>
 
-    <div class="background-container"></div>
+    <div class="background-image"></div>
 
-    <div class="overlay">
-        <div class="content-wrapper">
-            
-            <h1>היי בנות! 👋</h1>
-            
-            <p>כל המוצרים השווים במקום אחד<br>במחירים מפתיעים מעליאקספרס</p>
-            
-            <p class="bold-line">המלצות לפריטים ומותגים הכי שווים</p>
-            
-            <p>רק מוצרים בדוקים עם דירוג גבוה,<br>בלי ספאם, בלי חפירות!</p>
-            
-            <span class="highlight-line">סטייל נדיר בחצי מחיר מהארץ 💁🏻‍♀️</span>
-            
-            <p class="last-line">הצטרפי אלינו לקבוצת הווצאפ<br>ותהני מדילים מטורפים שאסור לפספס</p>
+    <div class="card-container">
+        <h1>היי בנות! 👋</h1>
+        
+        <p>כל המוצרים השווים במקום אחד<br>במחירים מפתיעים מעליאקספרס</p>
+        
+        <p class="bold-text">המלצות לפריטים ומותגים הכי שווים</p>
+        
+        <p>רק מוצרים בדוקים עם דירוג גבוה,<br>בלי ספאם, בלי חפירות!</p>
+        
+        <span class="pink-text">סטייל נדיר בחצי מחיר מהארץ 💁🏻‍♀️</span>
+        
+        <p>הצטרפי אלינו לקבוצת הווצאפ<br>ותהני מדילים מטורפים שאסור לפספס</p>
+
+        <a href="https://chat.whatsapp.com/L6wyOhQZs9d9o5cziRLjUn" class="whatsapp-btn">
+            להצטרפות לחצי כאן ->
+        </a>
+    </div>
+
+</body>
+</html>
