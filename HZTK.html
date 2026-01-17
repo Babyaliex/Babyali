@@ -27,12 +27,12 @@
         body, html {
             height: 100%;
             width: 100%;
-            overflow: hidden;
+            overflow: hidden; /* מונע גלילה מיותרת */
+            background-color: #f4f4f4;
         }
 
         /* הגדרת הרקע */
         .background-container {
-            /* התמונה שהעלית לגיטהאב */
             background-image: url('girls.jpg'); 
             background-size: cover;
             background-position: center bottom;
@@ -42,9 +42,27 @@
             z-index: -1;
         }
 
-        /* שכבת הבהרה עדינה */
+        /* תיקון למחשב */
+        @media (min-width: 768px) {
+            .background-container {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-color: #f0f0f0;
+            }
+            .overlay {
+                 background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 90%) !important;
+                 max-width: 500px;
+                 margin: 0 auto;
+                 left: 0; 
+                 right: 0;
+            }
+        }
+
+        /* שכבת הבהרה (Overlay) */
         .overlay {
-            background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 40%, rgba(255,255,255,0) 100%);
+            /* הבהרה חזקה יותר למעלה כדי שהטקסט הארוך יהיה קריא */
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0) 100%);
             height: 100%;
             width: 100%;
             position: absolute;
@@ -53,31 +71,56 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 20px;
+            padding: 15px;
         }
 
         /* עיצוב הטקסט */
         .content-top {
             text-align: center;
-            margin-top: 10vh;
+            margin-top: 2vh; 
             color: #333;
             animation: fadeIn 1.5s ease;
+            padding: 10px;
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #2c3e50;
-            line-height: 1.2;
         }
 
+        /* עיצוב הפסקאות */
         p {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.4;
+            color: #444;
+            margin-bottom: 8px;
             font-weight: 500;
-            color: #555;
-            max-width: 80%;
-            margin: 0 auto;
+        }
+
+        /* שורה מודגשת */
+        .bold-line {
+            font-weight: 800;
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        /* שורה צבעונית בוהקת */
+        .highlight-line {
+            color: #E91E63; /* ורוד פוקסיה בולט */
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 0px rgba(255,255,255,1);
+        }
+
+        /* שורה אחרונה לפני הכפתור */
+        .last-line {
+            font-size: 1rem;
+            margin-top: 5px;
+            color: #333;
         }
 
         /* עיצוב הכפתור */
@@ -91,9 +134,9 @@
             background-color: #25D366;
             color: white;
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 18px 30px;
+            padding: 15px 25px;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             display: inline-block;
@@ -105,40 +148,4 @@
         }
 
         .whatsapp-btn:active {
-            transform: scale(0.95);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="background-container"></div>
-
-    <div class="overlay">
-        
-        <div class="content-top">
-            <h1>מאיפה התיק? 🤫</h1>
-            <p>כל הלינקים, ההמלצות והמציאות השוות מחכים לך בקבוצה!</p>
-        </div>
-
-        <div class="button-container">
-            <a href="https://chat.whatsapp.com/L6wyOhQZs9d9o5cziRLjUn" class="whatsapp-btn">
-                להצטרפות לחצי כאן ->
-            </a>
-        </div>
-
-    </div>
-
-</body>
-</html>
+            transform: scale
