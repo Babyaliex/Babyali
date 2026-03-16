@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מבצעים לאמהות — ציוד תינוקות וילדים מאליאקספרס</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Heebo',sans-serif;background:#fff;color:#1a1a1a;direction:rtl;}
+  .lp{max-width:480px;margin:0 auto;background:#fff;min-height:100vh;}
+
+  .hero{background:linear-gradient(150deg,#7B5EA7 0%,#C88FD4 100%);padding:2.5rem 1.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:220px;height:220px;background:rgba(255,255,255,0.07);border-radius:50%;}
+  .hero::after{content:'';position:absolute;bottom:-32px;left:0;right:0;height:65px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0;}
+  .hero h1{color:#fff;font-size:2.1rem;font-weight:900;line-height:1.2;margin-bottom:0.8rem;position:relative;z-index:1;}
+  .hero h1 em{color:#FFE57F;font-style:normal;}
+  .hero p{color:rgba(255,255,255,0.9);font-size:1rem;line-height:1.65;position:relative;z-index:1;}
+
+  .benefits{padding:3rem 1.5rem 1.5rem;}
+  .sec-title{font-size:1.1rem;font-weight:900;color:#1a1a1a;margin-bottom:1.25rem;text-align:center;}
+  .ben{display:flex;align-items:flex-start;gap:13px;background:#F9F4FF;border-radius:13px;padding:14px;margin-bottom:11px;}
+  .ben-icon{font-size:1.5rem;min-width:38px;text-align:center;padding-top:2px;}
+  .ben h3{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:3px;}
+  .ben p{font-size:13px;color:#666;line-height:1.55;}
+
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 1.5rem 1.75rem;}
+  .stat{background:#F3E8FF;border-radius:13px;padding:1rem;text-align:center;border:1.5px solid #CE93D8;}
+  .stat .n{font-size:1.9rem;font-weight:900;color:#7B5EA7;}
+  .stat .l{font-size:12px;color:#888;margin-top:3px;}
+
+  .reviews{padding:0 1.5rem 1.5rem;}
+  .rev{background:#f9f9f9;border-radius:12px;padding:14px;margin-bottom:10px;border-right:4px solid #7B5EA7;}
+  .rev p{font-size:13px;color:#444;line-height:1.65;margin-bottom:6px;}
+  .rev .name{font-size:12px;color:#aaa;font-weight:700;}
+
+  .urgency{background:#F3E8FF;margin:0 1.5rem 1.5rem;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;}
+  .dot{width:10px;height:10px;min-width:10px;border-radius:50%;background:#7B5EA7;animation:blink 1s infinite;}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+  .urgency span{font-size:13px;color:#4A148C;font-weight:700;}
+
+  .cta{padding:0 1.5rem 2.5rem;text-align:center;}
+  .cta h2{font-size:1.35rem;font-weight:900;margin-bottom:6px;}
+  .cta .sub{font-size:13px;color:#999;margin-bottom:1.25rem;}
+
+  .wa-btn{
+    display:block;width:100%;
+    background:#5CB85C;
+    color:#fff;
+    font-family:'Heebo',sans-serif;font-size:1.15rem;font-weight:900;
+    padding:1.15rem 1rem;border-radius:14px;border:none;cursor:pointer;text-decoration:none;
+    animation:attention 1.8s ease-in-out infinite;
+    position:relative;overflow:hidden;
+  }
+  .wa-btn::after{
+    content:'';position:absolute;top:0;left:-100%;
+    width:60%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.28),transparent);
+    animation:shine 2.5s ease-in-out infinite;
+  }
+  @keyframes attention{
+    0%{transform:scale(1);box-shadow:0 4px 18px rgba(92,184,92,0.35);}
+    45%{transform:scale(1.045);box-shadow:0 8px 28px rgba(92,184,92,0.6);}
+    55%{transform:scale(1.045);box-shadow:0 8px 28px rgba(92,184,92,0.6);}
+    100%{transform:scale(1);box-shadow:0 4px 18px rgba(92,184,92,0.35);}
+  }
+  @keyframes shine{0%{left:-100%;}60%{left:160%;}100%{left:160%;}}
+
+  .note{font-size:12px;color:#bbb;margin-top:10px;}
+  .footer{text-align:center;padding:1.5rem;font-size:11px;color:#ccc;border-top:1px solid #f5f5f5;}
+</style>
+</head>
+<body>
+<div class="lp">
+  <div class="hero">
+    <h1>מבצעים לתינוקות<br>וילדים<br><em>רק הכי שווה</em></h1>
+    <p>הצטרפי לאלפי אמהות שחוסכות על ציוד תינוקות, צעצועים, ביגוד ילדים ועוד, כל יום בוואטסאפ</p>
+  </div>
+
+  <div class="benefits">
+    <div class="sec-title">מה תקבלי בקבוצה</div>
+    <div class="ben"><div class="ben-icon">🍼</div><div><h3>ציוד תינוקות במחירי הזדמנות</h3><p>עגלות, כיסאות, מוניטורים, בקבוקים — הנחות של עד 70%</p></div></div>
+    <div class="ben"><div class="ben-icon">🧸</div><div><h3>צעצועים וחינוך</h3><p>משחקי חשיבה, צעצועים התפתחותיים, ספרים — במחירים שלא תמצאי בשום חנות</p></div></div>
+    <div class="ben"><div class="ben-icon">👕</div><div><h3>ביגוד ילדים בזול</h3><p>פיג'מות, חולצות, מעילים — קולקציות שלמות במחיר של פריט אחד</p></div></div>
+    <div class="ben"><div class="ben-icon">✅</div><div><h3>מסוננים לבטיחות</h3><p>כל מוצר נבדק — רק מוכרים מהימנים עם ביקורות טובות</p></div></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">8,000+</div><div class="l">אמהות בקבוצה</div></div>
+    <div class="stat"><div class="n">כל יום</div><div class="l">מבצעים חדשים</div></div>
+    <div class="stat"><div class="n">350 שח</div><div class="l">חיסכון ממוצע בחודש</div></div>
+    <div class="stat"><div class="n">4.9 כוכבים</div><div class="l">דירוג האמהות</div></div>
+  </div>
+
+  <div class="reviews">
+    <div class="rev"><p>קניתי מוניטור תינוק ב-89 שקל ופיג'מות לתאומות שלי ב-35 שקל לזוג. איכות מדהימה</p><div class="name">שירה כ'</div></div>
+    <div class="rev"><p>כל הציוד לתינוק שלי הגיע מהקבוצה. חסכתי אלפים לעומת קניה בחנויות ישראליות</p><div class="name">נועה ר'</div></div>
+  </div>
+
+  <div class="urgency"><div class="dot"></div><span>הקבוצה פתוחה עכשיו — הצטרפי לפני שיתמלא</span></div>
+
+  <div class="cta">
+    <h2>אני רוצה לחסוך על הילדים שלי</h2>
+    <div class="sub">הצטרפות חינמית · ניתן לעזוב בכל רגע</div>
+    <a class="wa-btn" href="https://chat.whatsapp.com/LayQvDlwDwKKA5j2jDNC2G" target="_blank">הצטרפי לקבוצת האמהות בוואטסאפ</a>
+    <div class="note">ללא עלות · ללא ספאם · רק מבצעים אמיתיים</div>
+  </div>
+
+  <div class="footer">דף זה אינו שייך לאליאקספרס הרשמי</div>
+</div>
+</body>
+</html>
